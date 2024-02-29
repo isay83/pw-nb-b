@@ -1,27 +1,76 @@
-.btn-custom-modal {
+/* Estilo para el primer botón */
+.btn-custom-1 {
+    background-color: #ff5733;
+    /* Color de fondo */
+    color: #ffffff;
+    /* Color del texto */
+    border: 2px solid #ff5733;
+    /* Borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    padding: 10px 20px;
+    /* Espaciado interno */
+}
+
+.btn-custom-1:hover {
+    background-color: #ff8c66;
+    /* Cambio de color al pasar el mouse */
+    border-color: #ff8c66;
+    /* Cambio de color del borde al pasar el mouse */
+}
+
+/* Estilo para el segundo botón */
+.btn-custom-2 {
+    background-color: #5bc0de;
+    color: #ffffff;
+    border: 2px solid #5bc0de;
+    border-radius: 10px;
+    padding: 15px 25px;
+}
+
+.btn-custom-2:hover {
+    background-color: #87ceeb;
+    border-color: #87ceeb;
+}
+
+/* Estilo para el tercer botón */
+.btn-custom-3 {
+    background-color: #28a745;
+    color: #ffffff;
+    border: 2px solid #28a745;
+    border-radius: 0;
+    padding: 12px 18px;
+}
+
+.btn-custom-3:hover {
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+}
+
+/* Estilo para el cuarto botón */
+.btn-custom-4 {
+    background-color: #ffc107;
+    color: #000000;
+    border: 2px solid #ffc107;
+    border-radius: 20px;
+    padding: 8px 16px;
+}
+
+.btn-custom-4:hover {
+    background-color: #ffd54f;
+    border-color: #ffd54f;
+}
+
+/* Estilo para el quinto botón */
+.btn-custom-5 {
+    background-color: #6c757d;
+    color: #ffffff;
+    border: 2px solid #6c757d;
     border-radius: 50%;
-    background-color: #ff0000;
-    color: #ffffff;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    padding: 10px;
 }
 
-.btn-custom-card {
-    border-radius: 0.5rem;
-    background-color: #00ff00;
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.2rem;
-}
-
-.btn-custom-card:nth-child(3) {
-    background-color: #0000ff;
-}
-
-.btn-custom-card:nth-child(4) {
-    background-color: #ffff00;
-}
-
-.btn-custom-card:nth-child(5) {
-    background-color: #ff00ff;
+.btn-custom-5:hover {
+    background-color: #adb5bd;
+    border-color: #adb5bd;
 }
