@@ -74,3 +74,8 @@
     background-color: #adb5bd;
     border-color: #adb5bd;
 }
+
+.bg {
+    background-image: url(https://wallpaper.dog/large/20491247.jpg);
+    background-position: center center;
+}
