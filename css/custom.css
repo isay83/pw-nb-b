@@ -76,6 +76,8 @@
 }
 
 .bg {
-    background-image: url(https://wallpaper.dog/large/20491247.jpg);
+    background-image: url(../img/banner-lg.png);
     background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
