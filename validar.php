@@ -8,7 +8,10 @@ include 'class/classBD.php';
 if (isset($_POST['correo']) && isset($_POST['clave'])) {
     $correo = $_POST['correo'];
     $clave = $_POST['clave'];
+} else {
+    header('location: html/login.php?m=2');
 }
+
 
 // cadena de consulta
 $query = "SELECT * FROM usuario WHERE Email = '{$correo}' AND Clave = '{$clave}';";
@@ -22,5 +25,6 @@ if ($baseDatos->a_numeRegistros == 1) {
     echo "Email: " . $row['Email'] . "<br>";
 } else {
     // redirigir
-    header('location: html/login.php?m=1'); // redireccionar hacia un lugar en particular
+    header('location: html/login.php?m=1');
+    echo "<h2>Verifica el usuario y/o contraseña</h2>"; // redireccionar hacia un lugar en particular
 }

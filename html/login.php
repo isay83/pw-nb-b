@@ -17,9 +17,7 @@
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html"><i>bernalarriaga.com</i></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,8 +30,7 @@
                         <a class="nav-link" href="about.html">Sobre nosotros</a>
                     </li>
                     <div class="dropdown" data-bs-theme="light">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLight"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
                             Cuenta
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
@@ -63,6 +60,22 @@
             </div>
         </div>
     </nav>
+
+    <?php
+    if (($_GET['m'])) {
+        switch ($_GET['m']) {
+            case 1:
+                echo "<div class='alert alert-danger' role='alert'>Verifica el usuario y/o contraseña</div>";
+                break;
+            case 2:
+                echo "<div class='alert alert-danger' role='alert'>Faltan datos</div>";
+                break;
+            default:
+                echo "<div class='alert alert-danger' role='alert'>Error desconocido</div>";
+                break;
+        }
+    }
+    ?>
 
     <div class="container w-75 bg-primary mt-5 rounded shadow">
         <div class="row align-items-stretch">
@@ -120,8 +133,7 @@
                                 <button class="btn btn-outline-primary w-100 my-1">
                                     <div class="row align-items-center">
                                         <div class="col-2 d-none d-md-block">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png"
-                                                width="32" alt="">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png" width="32" alt="">
                                         </div>
                                         <div class="col-12 col-md-10 text-center">
                                             Facebook
@@ -133,8 +145,7 @@
                                 <button class="btn btn-outline-danger w-100 my-1">
                                     <div class="row align-items-center">
                                         <div class="col-2 d-none d-md-block">
-                                            <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c543.png"
-                                                width="32" alt="">
+                                            <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c543.png" width="32" alt="">
                                         </div>
                                         <div class="col-12 col-md-10 text-center">
                                             Whatssap
@@ -148,6 +159,8 @@
             </div>
         </div>
     </div>
+
+
 
 </body>
 
