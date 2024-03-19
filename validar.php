@@ -13,6 +13,7 @@ if (isset($_POST['correo']) && isset($_POST['clave'])) {
 // cadena de consulta
 $query = "SELECT * FROM usuario WHERE Email = '{$correo}' AND Clave = '{$clave}';";
 // realizar consulta
+$baseDatos->open();
 $baseDatos->query($query);
 // mostrar los datos
 if ($baseDatos->a_numeRegistros == 1) {
