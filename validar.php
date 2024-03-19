@@ -5,8 +5,11 @@
 
 include 'class/classBD.php';
 // obtener datos del formulario
-$correo = $_POST['correo'];
-$clave = $_POST['clave'];
+if (isset($_POST['correo']) && isset($_POST['clave'])) {
+    $correo = $_POST['correo'];
+    $clave = $_POST['clave'];
+}
+
 // cadena de consulta
 $query = "SELECT * FROM usuario WHERE Email = '{$correo}' AND Clave = '{$clave}';";
 // realizar consulta
