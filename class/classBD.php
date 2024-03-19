@@ -11,10 +11,10 @@ class BaseDatos
 
     function __construct()
     {
-        $this->a_servidor = "";
-        $this->a_user = "";
-        $this->a_pwd = "";
-        $this->a_baseDatos = "";
+        $this->a_servidor = "localhost";
+        $this->a_user = "basta";
+        $this->a_pwd = "1234";
+        $this->a_baseDatos = "basta";
     }
 
     function open()
