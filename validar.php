@@ -3,6 +3,8 @@
 // Checar que los datos en la base de datos concuerden
 // Redirigir
 
+include 'class/classBD.php';
+
 $correo = $_POST['correo'];
 $clave = $_POST['clave'];
 
