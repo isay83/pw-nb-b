@@ -16,6 +16,8 @@ if (!isset($_SESSION['Nombre'])) {
 
 <body>
     <h1>Bienvenido <?= $_SESSION['Nombre']; ?></h1>
+
+    <a href="../html/index.php">Cerrar sesión</a>
 </body>
 
 </html>
