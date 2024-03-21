@@ -5,6 +5,7 @@ class Acceso extends BaseDatos
 
     function action($cual)
     {
+        $result = "";
         switch ($cual) {
             case 'formLogin':
                 break;
@@ -24,7 +25,11 @@ class Acceso extends BaseDatos
 
             case 'retrievePwd':
                 break;
+            default:
+                $result .= $cual . "No está definido en el acceso";
         }
+
+        return $result;
     }
 
     function login()
@@ -44,10 +49,10 @@ class Acceso extends BaseDatos
                 echo "Email: " . $row['Email'] . "<br>";
             } else {
                 // redirigir
-                header('location: html/login.php?m=1');
+                header('location: ../html/login.php?m=1');
             }
         } else {
-            header('location: html/login.php?m=2');
+            header('location: ../html/login.php?m=2');
         }
     }
 }
@@ -59,5 +64,5 @@ $acceso = new Acceso();
 if (isset($_REQUEST['accion'])) {
     echo $acceso->action($_REQUEST['accion']);
 } else {
-    header('location: html/login.php?m=3');
+    header('location: ../html/login.php?m=3');
 }
