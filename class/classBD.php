@@ -36,6 +36,13 @@ class BaseDatos
         $this->a_numeRegistros = mysqli_num_rows($this->a_bloqRegistros);
         $this->close();
     }
+
+    function getRecord($query)
+    {
+        $this->a_bloqRegistros = mysqli_query($this->a_conexion, $query);
+        $this->a_numeRegistros = mysqli_num_rows($this->a_bloqRegistros);
+        return mysqli_fetch_assoc($this->a_bloqRegistros);
+    }
 }
 
 

@@ -61,7 +61,9 @@
         </div>
     </nav>
 
+
     <?php
+    /*
     if (($_GET['m'])) {
         switch ($_GET['m']) {
             case 1:
@@ -74,6 +76,7 @@
                 break;
         }
     }
+    */
     ?>
 
     <div class="container w-75 bg-primary mt-5 rounded shadow">

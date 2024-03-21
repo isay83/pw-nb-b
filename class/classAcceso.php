@@ -41,12 +41,18 @@ class Acceso extends BaseDatos
             $query = "SELECT * FROM usuario WHERE Email = '{$correo}' AND Clave = '{$clave}';";
             // realizar consulta
             $this->open();
-            $this->query($query);
+            $registro = $this->getRecord($query);
             // mostrar los datos
             if ($this->a_numeRegistros == 1) {
-                $row = mysqli_fetch_assoc($this->a_bloqRegistros);
+                /*$row = mysqli_fetch_assoc($this->a_bloqRegistros);
                 echo "Nombre: " . $row['Nombre'] . "<br>";
                 echo "Email: " . $row['Email'] . "<br>";
+                */
+                $_SESSION['Nombre'] = $registro->Nombre . " " . $registro->Apellidos;
+                $_SESSION['Correo'] = $registro->Correo;
+                $_SESSION['Id'] = $registro->Id;
+                $_SESSION['Foto'] = $registro->Foto;
+                header('location: ../php/home.php');
             } else {
                 // redirigir
                 header('location: ../html/login.php?m=1');
