@@ -71,7 +71,6 @@
                 echo "<div class='alert alert-danger' role='alert'>Faltan datos</div>";
                 break;
             default:
-                echo "<div class='alert alert-danger' role='alert'>Error desconocido</div>";
                 break;
         }
     }
