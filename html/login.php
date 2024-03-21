@@ -91,6 +91,7 @@
                 <!-- LOGIN -->
 
                 <form action="../validar.php" method="post">
+                    <input type="hidden" name="action" value="login">
                     <div class="mb-4">
                         <label for="correo" class="form-label">
                             Correo
