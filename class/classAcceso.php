@@ -7,18 +7,23 @@ class Acceso extends BaseDatos
     {
         switch ($cual) {
             case 'formLogin':
+                break;
 
             case 'login':
                 $this->login();
                 break;
 
             case 'formRecord':
+                break;
 
             case 'record':
+                break;
 
             case 'formPwd':
+                break;
 
             case 'retrievePwd':
+                break;
         }
     }
 
@@ -30,11 +35,11 @@ class Acceso extends BaseDatos
 
             $query = "SELECT * FROM usuario WHERE Email = '{$correo}' AND Clave = '{$clave}';";
             // realizar consulta
-            $baseDatos->open();
-            $baseDatos->query($query);
+            $this->open();
+            $this->query($query);
             // mostrar los datos
-            if ($baseDatos->a_numeRegistros == 1) {
-                $row = mysqli_fetch_assoc($baseDatos->a_bloqRegistros);
+            if ($this->a_numeRegistros == 1) {
+                $row = mysqli_fetch_assoc($this->a_bloqRegistros);
                 echo "Nombre: " . $row['Nombre'] . "<br>";
                 echo "Email: " . $row['Email'] . "<br>";
             } else {
@@ -46,7 +51,9 @@ class Acceso extends BaseDatos
         }
     }
 }
-
+var_dump($_POST);
+//print_r()
+// objeto
 $acceso = new Acceso();
 
 if (isset($_REQUEST['accion'])) {
