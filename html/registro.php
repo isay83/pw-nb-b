@@ -35,10 +35,10 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
                             <li>
-                                <a class="dropdown-item" href="#">Login</a>
+                                <a class="dropdown-item" href="login.php">Login</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="registro.php">Registro</a>
+                                <a class="dropdown-item" href="#">Registro</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="recuperar.php">Recuperar contraseña</a>
@@ -61,24 +61,6 @@
         </div>
     </nav>
 
-
-    <?php
-    /*
-    if (($_GET['m'])) {
-        switch ($_GET['m']) {
-            case 1:
-                echo "<div class='alert alert-danger' role='alert'>Verifica el usuario y/o contraseña</div>";
-                break;
-            case 2:
-                echo "<div class='alert alert-danger' role='alert'>Faltan datos</div>";
-                break;
-            default:
-                break;
-        }
-    }
-    */
-    ?>
-
     <div class="container w-75 bg-primary mt-5 rounded shadow">
         <div class="row align-items-stretch">
             <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
@@ -92,8 +74,27 @@
 
                 <!-- LOGIN -->
 
-                <form action="../validar.php" method="post">
-                    <input type="hidden" name="accion" value="login">
+                <form action="#">
+                    <div class="mb-4">
+                        <label for="nombre" class="form-label">
+                            Nombre
+                        </label>
+                        <input type="text" class="form-control" name="nombre">
+                    </div>
+                    <div class="mb-4">
+                        <label for="apellidos" class="form-label">
+                            Apellidos
+                        </label>
+                        <input type="text" class="form-control" name="apellidos">
+                    </div>
+                    <div class="mb-4">
+                        <label for="genero" class="form-label">Género</label>
+                        <select class="form-control" id="genero">
+                            <option value="m">Masculino</option>
+                            <option value="f">Femenino</option>
+                            <option value="o">Otro</option>
+                        </select>
+                    </div>
                     <div class="mb-4">
                         <label for="correo" class="form-label">
                             Correo
@@ -117,15 +118,14 @@
                         <label for="connected" class="form-check-label">Captcha</label>
                     </div-->
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                        <button type="submit" class="btn btn-primary">Registrarse</button>
                     </div>
                     <div class="my-3">
-                        <span>¿No tienes cuenta? <a href="registro.php">Regístrate</a></span><br>
-                        <span><a href="recuperar.php">Recuperar contraseña</a></span>
+                        <span>¿Ya tienes cuenta? <a href="login.php">Inicia sesión</a></span><br>
                     </div>
                 </form>
 
-                <!-- LOGIN CON REDES SOCIAL -->
+                <!-- REGISTRO CON REDES SOCIAL -->
                 <div class="container w-100 my-5">
                     <div class="row">
                         <div class="col-12 text-center">
@@ -162,7 +162,6 @@
             </div>
         </div>
     </div>
-
 
 
 </body>

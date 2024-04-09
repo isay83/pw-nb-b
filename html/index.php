@@ -32,7 +32,7 @@ session_destroy();
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">Sobre nosotros</a>
+                        <a class="nav-link" href="about.php">Sobre nosotros</a>
                     </li>
                     <div class="dropdown" data-bs-theme="light">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,10 +43,10 @@ session_destroy();
                                 <a class="dropdown-item" href="login.php">Login</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="registro.html">Registro</a>
+                                <a class="dropdown-item" href="registro.php">Registro</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="recuperar.html">Recuperar contraseña</a>
+                                <a class="dropdown-item" href="recuperar.php">Recuperar contraseña</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">

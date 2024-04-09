@@ -63,6 +63,10 @@ class Acceso extends BaseDatos
             header('location: ../html/login.php?m=2');
         }
     }
+
+    function registro()
+    {
+    }
 }
 var_dump($_POST);
 //print_r()

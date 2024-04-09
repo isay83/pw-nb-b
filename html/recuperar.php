@@ -35,13 +35,13 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
                             <li>
-                                <a class="dropdown-item" href="#">Login</a>
+                                <a class="dropdown-item" href="login.php">Login</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="registro.php">Registro</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="recuperar.php">Recuperar contraseña</a>
+                                <a class="dropdown-item" href="#">Recuperar contraseña</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -61,24 +61,6 @@
         </div>
     </nav>
 
-
-    <?php
-    /*
-    if (($_GET['m'])) {
-        switch ($_GET['m']) {
-            case 1:
-                echo "<div class='alert alert-danger' role='alert'>Verifica el usuario y/o contraseña</div>";
-                break;
-            case 2:
-                echo "<div class='alert alert-danger' role='alert'>Faltan datos</div>";
-                break;
-            default:
-                break;
-        }
-    }
-    */
-    ?>
-
     <div class="container w-75 bg-primary mt-5 rounded shadow">
         <div class="row align-items-stretch">
             <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
@@ -92,20 +74,14 @@
 
                 <!-- LOGIN -->
 
-                <form action="../validar.php" method="post">
-                    <input type="hidden" name="accion" value="login">
+                <form action="#">
                     <div class="mb-4">
                         <label for="correo" class="form-label">
                             Correo
                         </label>
                         <input type="text" class="form-control" name="correo">
                     </div>
-                    <div class="mb-4">
-                        <label for="clave" class="form-label">
-                            Contraseña
-                        </label>
-                        <input type="password" class="form-control" name="clave">
-                    </div>
+
                     <div class="mb-4">
                         <label for="captcha" class="form-label">
                             Captcha
@@ -117,11 +93,11 @@
                         <label for="connected" class="form-check-label">Captcha</label>
                     </div-->
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                        <button type="submit" class="btn btn-primary">Recuperar</button>
                     </div>
                     <div class="my-3">
                         <span>¿No tienes cuenta? <a href="registro.php">Regístrate</a></span><br>
-                        <span><a href="recuperar.php">Recuperar contraseña</a></span>
+                        <span><a href="login.php">Recuperar contraseña</a></span>
                     </div>
                 </form>
 
@@ -162,8 +138,6 @@
             </div>
         </div>
     </div>
-
-
 
 </body>
 
