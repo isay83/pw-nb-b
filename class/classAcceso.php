@@ -60,6 +60,7 @@ class Acceso extends BaseDatos
                     $_SESSION['Correo'] = $registro->Correo;
                     $_SESSION['Id'] = $registro->Id;
                     $_SESSION['Foto'] = $registro->Foto;
+                    $_SESSION['admin'] = ($registro->IdTipoUsuario) ? true : false;
 
                     header('location: ../php/home.php');
                 } else {
