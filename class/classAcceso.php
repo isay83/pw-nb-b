@@ -49,9 +49,11 @@ class Acceso extends BaseDatos
                 echo "Email: " . $row['Email'] . "<br>";
                 */
                 $_SESSION['Nombre'] = $registro->Nombre . " " . $registro->Apellidos;
+
                 $_SESSION['Correo'] = $registro->Correo;
                 $_SESSION['Id'] = $registro->Id;
                 $_SESSION['Foto'] = $registro->Foto;
+
                 header('location: ../php/home.php');
             } else {
                 // redirigir
