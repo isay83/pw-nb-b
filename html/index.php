@@ -1,6 +1,27 @@
 <?php
 session_start();
-session_destroy();
+session_unset();
+
+// 3 digitos y 2 operadores
+$operacion = generarOperando() . generarOperador() . generarOperando() . generarOperador() . generarOperando();
+// Calcular el valor de la operación
+$resultado = eval("return $operacion;");
+
+$_SESSION['capt_login'] = $resuLogin;
+$_SESSION['capt_registro'] = $resuRegistro;
+$_SESSION['capt_contra'] = $resuContra;
+
+function generarOperando()
+{
+    $operandos = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+    return $operandos[array_rand($operandos)];
+}
+
+function generarOperador()
+{
+    $operadores = array('+', '-', '*');
+    return $operadores[array_rand($operadores)];
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">

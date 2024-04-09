@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
+
 <head>
     <meta charset="utf-8">
     <meta viewport="width=device-width, initial-scale=1.0">
@@ -72,7 +73,7 @@
                 </div-->
                 <h2 class="fw-bold text-center py-5">Bienvenido</h2>
 
-                <!-- LOGIN -->
+                <!-- REGISTRO -->
 
                 <form action="#">
                     <div class="mb-4">
@@ -101,12 +102,14 @@
                         </label>
                         <input type="text" class="form-control" name="correo">
                     </div>
+                    <!--
                     <div class="mb-4">
                         <label for="clave" class="form-label">
                             Contraseña
                         </label>
                         <input type="password" class="form-control" name="clave">
                     </div>
+-->
                     <div class="mb-4">
                         <label for="captcha" class="form-label">
                             Captcha
