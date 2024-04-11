@@ -7,9 +7,9 @@ $operacion = generarOperando() . generarOperador() . generarOperando() . generar
 // Calcular el valor de la operación
 $resultado = eval("return $operacion;");
 
-$_SESSION['capt_login'] = $resuLogin;
-$_SESSION['capt_registro'] = $resuRegistro;
-$_SESSION['capt_contra'] = $resuContra;
+//$_SESSION['capt_login'] = $resuLogin;
+//$_SESSION['capt_registro'] = $resuRegistro;
+//$_SESSION['capt_contra'] = $resuContra;
 
 function generarOperando()
 {
@@ -31,6 +31,7 @@ function generarOperador()
     <meta viewport="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous"-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
@@ -61,7 +62,7 @@ function generarOperador()
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
                             <li>
-                                <a class="dropdown-item" href="login.php">Login</a>
+                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="registro.php">Registro</a>
@@ -75,17 +76,119 @@ function generarOperador()
                             <li><a class="dropdown-item" href="#">Configuración</a></li>
                         </ul>
                     </div>
-                    <!--li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li-->
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
+                <!--Other content-->
             </div>
         </div>
     </nav>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background: repeating-conic-gradient(blue 10%, yellow 20%, red 30%);">
+                <div class="modal-body">
+                    <div class="m-auto p-2 bg-secondary">
+                        <div class="d-flex justify-content-end"> <!-- Contenedor para alinear el botón a la derecha -->
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-12">
+                            <div class="card bg-dark text-white">
+                                <div class="card-body p-4 text-center">
+
+                                    <div class="mb-md-5 mt-md-4 pb-5">
+
+                                        <h2 class="fw-bold mb-2 text-uppercase">Iniciar Sesión</h2>
+                                        <p class="text-white-50 mb-5">Introduce tu nombre de usuario y contraseña.</p>
+                                        <form>
+                                            <div class="form-floating mb-4">
+                                                <input type="text" name="usuario" id="typeUser" class="form-control form-control-lg bg-transparent text-light" placeholder="Usuario">
+                                                <label class="form-label" for="typeUser">Usuario</label>
+                                            </div>
+
+                                            <div class="form-floating mb-4">
+                                                <input type="password" name="clave" id="typePasswordX" class="form-control form-control-lg bg-transparent text-light" placeholder="Contraseña">
+                                                <label class="form-label" for="typePasswordX">Contraseña</label>
+                                            </div>
+
+                                            <div class="form-floating mb-4">
+                                                <input type="number" name="captcha" id="typeCaptcha" class="form-control form-control-lg bg-transparent text-light" placeholder="Usuario">
+                                                <label class="form-label" for="typeCaptcha">Captcha</label>
+                                            </div>
+
+                                            <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">¿Olvidaste tu contraseña?</a></p>
+
+                                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                                            <hr class="border-top border-light">
+                                        </form>
+                                        <div class="d-flex justify-content-center text-center mt-4 gap-3 pt-1">
+                                            <button type="button" class="btn btn-outline-info"><i class="bi bi-facebook"></i> Facebook</button>
+                                            <button type="button" class="btn btn-outline-danger"><i class="bi bi-google"></i> Google</button>
+                                            <button type="button" class="btn btn-outline-light"><i class="bi bi-github"></i> GitHub</button>
+                                        </div>
+
+                                    </div>
+
+                                    <div>
+                                        <p class="mb-0">¿No tienes cuenta? <a href="#!" class="text-white-50 fw-bold">Regístrate</a>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--section class="vh-100">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+
+                            <div class="mb-md-5 mt-md-4 pb-5">
+
+                                <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                                <p class="text-white-50 mb-5">Please enter your login and password!</p>
+
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                                    <label class="form-label" for="typeEmailX">Email</label>
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                                    <label class="form-label" for="typePasswordX">Password</label>
+                                </div>
+
+                                <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+
+                                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+
+                                <div class="d-flex justify-content-center text-center mt-4 gap-3 pt-1">
+                                    <button type="button" class="btn btn-outline-info"><i class="bi bi-facebook"></i> Facebook</button>
+                                    <button type="button" class="btn btn-outline-danger"><i class="bi bi-google"></i> Google</button>
+                                    <button type="button" class="btn btn-outline-light"><i class="bi bi-github"></i> GitHub</button>
+                                </div>
+
+                            </div>
+
+                            <div>
+                                <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section -->
 
     <div class="container mt-5">
         <div class="row">

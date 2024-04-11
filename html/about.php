@@ -23,11 +23,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+                        <a class="nav-link" aria-current="page" href="index.php">Inicio</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sobre nosotros</a>
+                        <a class="nav-link active" href="#">Sobre nosotros</a>
                     </li>
                     <div class="dropdown" data-bs-theme="light">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,14 +49,8 @@
                             <li><a class="dropdown-item" href="#">Configuración</a></li>
                         </ul>
                     </div>
-                    <!--li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li-->
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
+                <!--Other content-->
             </div>
         </div>
     </nav>

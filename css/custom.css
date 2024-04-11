@@ -1,3 +1,8 @@
+.gradient-conic {
+    /* fallback for old browsers */
+    background: repeating-conic-gradient(blue 10%, yellow 20%, red 30%);
+}
+
 /* Estilo para el primer botón */
 .btn-custom-1 {
     background-color: #ff5733;
