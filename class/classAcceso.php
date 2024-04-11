@@ -3,10 +3,10 @@ include 'classBD.php';
 class Acceso extends BaseDatos
 {
 
-    function action($cual)
+    function action($accion)
     {
         $result = "";
-        switch ($cual) {
+        switch ($accion) {
             case 'formLogin':
                 break;
 
@@ -30,7 +30,7 @@ class Acceso extends BaseDatos
             case 'retrievePwd':
                 break;
             default:
-                $result .= $cual . "No está definido en el acceso";
+                $result .= $accion . "No está definido en el acceso";
         }
 
         return $result;

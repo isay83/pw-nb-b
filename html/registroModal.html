@@ -17,49 +17,50 @@
 
                                     <h2 class="fw-bold mb-2 text-uppercase">REGISTRO</h2>
                                     <p class="text-white-50 mb-5">Introduce tus datos para completar el registro.</p>
-                                    <form>
+                                    <form action="../class/classAcceso.php" method="POST">
+                                        <input type="hidden" name="accion" value="registro">
                                         <div class="row">
                                             <div class="col-md-6 mb-4">
                                                 <div class="form-floating">
-                                                    <input type="text" id="typeNombre"
+                                                    <input type="text" name="nombre" id="nombre"
                                                         class="form-control form-control-lg bg-transparent text-light"
                                                         placeholder="Nombre">
-                                                    <label class="form-label" for="typeNombre">Nombre</label>
+                                                    <label class="form-label" for="nombre">Nombre</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-4">
                                                 <div class="form-floating">
-                                                    <input type="text" id="typeApellidos"
+                                                    <input type="text" name="apellidos" id="apellidos"
                                                         class="form-control form-control-lg bg-transparent text-light"
                                                         placeholder="Apellidos">
-                                                    <label class="form-label" for="typeApellidos">Apellidos</label>
+                                                    <label class="form-label" for="apellidos">Apellidos</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-floating mb-4">
-                                            <input type="email" name="correo" id="typeCorreo"
+                                            <input type="email" name="correo" id="correo"
                                                 class="form-control form-control-lg bg-transparent text-light"
                                                 placeholder="Correo">
-                                            <label class="form-label" for="typeCorreo">Correo</label>
+                                            <label class="form-label" for="correo">Correo</label>
                                         </div>
 
                                         <div class="form-floating mb-4">
-                                            <input type="password" name="clave" id="typePasswordX"
+                                            <input type="password" name="clave" id="clave"
                                                 class="form-control form-control-lg bg-transparent text-light"
                                                 placeholder="Contraseña">
-                                            <label class="form-label" for="typePasswordX">Contraseña</label>
+                                            <label class="form-label" for="clave">Contraseña</label>
                                         </div>
 
                                         <div class="form-floating mb-4">
-                                            <input type="number" name="captcha" id="typeCaptcha"
+                                            <input type="number" name="captcha" id="captcha"
                                                 class="form-control form-control-lg bg-transparent text-light"
                                                 placeholder="Usuario">
-                                            <label class="form-label" for="typeCaptcha">Captcha</label>
+                                            <label class="form-label" for="captcha">Captcha</label>
                                         </div>
 
                                         <div class="mb-4">
-                                            <select class="form-select form-select-lg bg-transparent text-light"
-                                                id="typeGenero">
+                                            <select class="form-select bg-transparent text-light" name="genero"
+                                                id="genero">
                                                 <option class="bg-dark" selected>Género</option>
                                                 <option class="bg-dark" value="m">Masculino</option>
                                                 <option class="bg-dark" value="f">Femenino</option>

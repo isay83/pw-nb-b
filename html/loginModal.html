@@ -17,26 +17,27 @@
 
                                     <h2 class="fw-bold mb-2 text-uppercase">Iniciar Sesión</h2>
                                     <p class="text-white-50 mb-5">Introduce tu nombre de usuario y contraseña.</p>
-                                    <form>
+                                    <form action="../class/classAcceso.php" method="POST">
+                                        <input type="hidden" name="accion" value="login">
                                         <div class="form-floating mb-4">
-                                            <input type="text" name="usuario" id="typeUser"
+                                            <input type="email" name="correo" id="correo"
                                                 class="form-control form-control-lg bg-transparent text-light"
-                                                placeholder="Usuario">
-                                            <label class="form-label" for="typeUser">Usuario</label>
+                                                placeholder="Correo">
+                                            <label class="form-label" for="correo">Correo</label>
                                         </div>
 
                                         <div class="form-floating mb-4">
-                                            <input type="password" name="clave" id="typePassword"
+                                            <input type="password" name="clave" id="clave"
                                                 class="form-control form-control-lg bg-transparent text-light"
                                                 placeholder="Contraseña">
-                                            <label class="form-label" for="typePassword">Contraseña</label>
+                                            <label class="form-label" for="clave">Contraseña</label>
                                         </div>
 
                                         <div class="form-floating mb-4">
-                                            <input type="number" name="captcha" id="typeCaptcha"
+                                            <input type="number" name="captcha" id="captcha"
                                                 class="form-control form-control-lg bg-transparent text-light"
                                                 placeholder="Captcha">
-                                            <label class="form-label" for="typeCaptcha">Captcha</label>
+                                            <label class="form-label" for="captcha">Captcha</label>
                                         </div>
 
                                         <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">¿Olvidaste tu

@@ -29,8 +29,8 @@ function generarOperador()
 <head>
     <meta charset="utf-8">
     <meta viewport="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous"-->
@@ -54,7 +54,7 @@ function generarOperador()
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="about.php">Sobre nosotros</a>
+                        <a class="nav-link" href="php/about.php">Sobre nosotros</a>
                     </li>
                     <div class="dropdown" data-bs-theme="light">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,13 +62,13 @@ function generarOperador()
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
                             <li>
-                                <a class="dropdown-item" href="#" onclick="loadModal('loginModal', 'modalContainerLogin', '../html/loginModal.html')">Login</a>
+                                <a class="dropdown-item" href="#" onclick="loadModal('loginModal', 'modalContainerLogin', 'html/loginModal.html')">Login</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#" onclick="loadModal('registroModal', 'modalContainerRegistro', '../html/registroModal.html')">Registro</a>
+                                <a class="dropdown-item" href="#" onclick="loadModal('registroModal', 'modalContainerRegistro', 'html/registroModal.html')">Registro</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#" onclick="loadModal('recuperarModal', 'modalContainerRecuperar', '../html/recuperarModal.html')">Recuperar contraseña</a>
+                                <a class="dropdown-item" href="#" onclick="loadModal('recuperarModal', 'modalContainerRecuperar', 'html/recuperarModal.html')">Recuperar contraseña</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -198,8 +198,7 @@ function generarOperador()
         modal</button>
 
 
-
-    <script src="../js/modalLoader.js"></script>
+    <script src="js/modalLoader.js"></script>
 </body>
 
 </html>

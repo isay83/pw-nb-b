@@ -6,6 +6,7 @@
     <meta viewport="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous"-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
@@ -16,14 +17,14 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php"><i>bernalarriaga.com</i></a>
+            <a class="navbar-brand" href="../index.php"><i>bernalarriaga.com</i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php">Inicio</a>
+                        <a class="nav-link" aria-current="page" href="../index.php">Inicio</a>
                     </li>
 
                     <li class="nav-item">
@@ -35,13 +36,13 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
                             <li>
-                                <a class="dropdown-item" href="login.php">Login</a>
+                                <a class="dropdown-item" href="#" onclick="loadModal('loginModal', 'modalContainerLogin', '../html/loginModal.html')">Login</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="registro.php">Registro</a>
+                                <a class="dropdown-item" href="#" onclick="loadModal('registroModal', 'modalContainerRegistro', '../html/registroModal.html')">Registro</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="recuperar.php">Recuperar contraseña</a>
+                                <a class="dropdown-item" href="#" onclick="loadModal('recuperarModal', 'modalContainerRecuperar', '../html/recuperarModal.html')">Recuperar contraseña</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -54,6 +55,15 @@
             </div>
         </div>
     </nav>
+
+    <!-- Contenedor invisible para cargar el modal de login -->
+    <div id="modalContainerLogin"></div>
+
+    <!-- Contenedor invisible para cargar el modal de Registro -->
+    <div id="modalContainerRegistro"></div>
+
+    <!-- Contenedor invisible para cargar el modal de Recuperar contraseña -->
+    <div id="modalContainerRecuperar"></div>
 
     <div class="container p-4">
         <section class="about-section">
@@ -71,6 +81,8 @@
             </div>
         </section>
     </div>
+
+    <script src="../js/modalLoader.js"></script>
 
 </body>
 

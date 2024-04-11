@@ -17,19 +17,20 @@
 
                                     <h2 class="fw-bold mb-2 text-uppercase">RECUPERAR CONTRASEÑA</h2>
                                     <p class="text-white-50 mb-5">Introduce tu correo electrónico.</p>
-                                    <form>
+                                    <form action="../class/classAcceso.php" method="POST">
+                                        <input type="hidden" name="accion" value="recuperar">
                                         <div class="form-floating mb-4">
-                                            <input type="email" name="correo" id="typeCorreo"
+                                            <input type="email" name="correo" id="correo"
                                                 class="form-control form-control-lg bg-transparent text-light"
                                                 placeholder="Correo">
-                                            <label class="form-label" for="typeCorreo">Correo</label>
+                                            <label class="form-label" for="correo">Correo</label>
                                         </div>
 
                                         <div class="form-floating mb-4">
-                                            <input type="number" name="captcha" id="typeCaptcha"
+                                            <input type="number" name="captcha" id="captcha"
                                                 class="form-control form-control-lg bg-transparent text-light"
                                                 placeholder="Captcha">
-                                            <label class="form-label" for="typeCaptcha">Captcha</label>
+                                            <label class="form-label" for="captcha">Captcha</label>
                                         </div>
 
                                         <button data-mdb-button-init data-mdb-ripple-init
