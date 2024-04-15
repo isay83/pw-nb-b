@@ -1,3 +1,17 @@
+<?php
+session_start();
+//CRUD create => formInsert, insert
+if (!isset($_SESSION['Nombre']) && $_SESSION['admin'] == true) {
+    header('location: ../html/index.php?m=5');
+}
+
+
+if (isset($_REQUEST['accion']))
+    echo $Categoria->accion($_REQUEST['accion']);
+else
+    echo $Categoria->accion("report");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
