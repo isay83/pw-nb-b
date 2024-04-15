@@ -14,8 +14,8 @@ $_SESSION['operacion'] = $operacion;
 
 
 // FACEBOOK
-// 1125538022062254
-// f838e2a8af1f0124602681423c1147c1
+// 
+// 
 
 function generarOperando()
 {
