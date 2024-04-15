@@ -7,9 +7,15 @@ $operacion = generarOperando() . generarOperador() . generarOperando() . generar
 // Calcular el valor de la operación
 $resultado = eval("return $operacion;");
 
+$_SESSION['operacion'] = $operacion;
 //$_SESSION['capt_login'] = $resuLogin;
 //$_SESSION['capt_registro'] = $resuRegistro;
 //$_SESSION['capt_contra'] = $resuContra;
+
+
+// FACEBOOK
+// 1125538022062254
+// f838e2a8af1f0124602681423c1147c1
 
 function generarOperando()
 {
@@ -196,6 +202,8 @@ function generarOperador()
     </div>
     <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Abre el primer
         modal</button>
+
+    <?php echo $_SESSION['operacion']; ?>
 
 
     <script src="js/modalLoader.js"></script>

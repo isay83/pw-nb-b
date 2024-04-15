@@ -33,14 +33,17 @@
                                             <label class="form-label" for="clave">Contraseña</label>
                                         </div>
 
-                                        <div class="form-floating mb-4">
+                                        <div class="mb-4">
                                             <input type="number" name="captcha" id="captcha"
                                                 class="form-control form-control-lg bg-transparent text-light"
                                                 placeholder="Captcha">
-                                            <label class="form-label" for="captcha">Captcha</label>
+                                            <!--label class="form-label" for="captcha">Captcha
+                                            </label-->
                                         </div>
 
-                                        <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">¿Olvidaste tu
+                                        <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#"
+                                                onclick="closeModal('loginModal'); loadModal('recuperarModal', 'modalContainerRecuperar', 'html/recuperarModal.html');">¿Olvidaste
+                                                tu
                                                 contraseña?</a></p>
 
                                         <button data-mdb-button-init data-mdb-ripple-init
@@ -59,7 +62,8 @@
                                 </div>
 
                                 <div>
-                                    <p class="mb-0">¿No tienes cuenta? <a href="#!"
+                                    <p class="mb-0">¿No tienes cuenta? <a href="#"
+                                            onclick="closeModal('loginModal'); loadModal('registroModal', 'modalContainerRegistro', 'html/registroModal.html');"
                                             class="text-white-50 fw-bold">Regístrate</a>
                                     </p>
                                 </div>
