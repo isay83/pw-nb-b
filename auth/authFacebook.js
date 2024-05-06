@@ -1,17 +1,20 @@
 const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
-const express = require('express');
-const User = require('../dal/models/user.model');
 
 const router = express.Router();
 require('dotenv').config();
 
+const DB_HOST = process.env.DB_HOST;
+const DB_USER = process.env.DB_USER;
+const DB_PASSWORD = process.env.DB_PASSWORD;
+const DB_DATABASE = process.env.DB_DATABASE;
+
 passport.use(
     new FacebookStrategy(
         {
-            clientID: "1125538022062254",
-            clientSecret: "f838e2a8af1f0124602681423c1147c1",
-            callbackURL: "http://localhost:3000/auth/facebook/callback"
+            clientID: process.env.FACEBOOK_APP_ID,
+            clientSecret: process.env.FACEBOOK_APP_SECRET,
+            callbackURL: "http://localhost/auth/facebook/callback"
         },
         async function (accessToken, refreshToken, profile, cb) {
             const user = await User.findOne({
