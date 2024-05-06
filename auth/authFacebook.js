@@ -1,13 +1,22 @@
+const express = require('express');
+const session = require('express-session');
 const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
-
 const router = express.Router();
 require('dotenv').config();
 
-const DB_HOST = process.env.DB_HOST;
-const DB_USER = process.env.DB_USER;
-const DB_PASSWORD = process.env.DB_PASSWORD;
-const DB_DATABASE = process.env.DB_DATABASE;
+const Usuario = require('../model/usuario');
+
+// Configurar sesión
+router.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true
+}));
+
+// Configurar Passport
+router.use(passport.initialize());
+router.use(passport.session());
 
 passport.use(
     new FacebookStrategy(
@@ -17,24 +26,28 @@ passport.use(
             callbackURL: "http://localhost/auth/facebook/callback"
         },
         async function (accessToken, refreshToken, profile, cb) {
-            const user = await User.findOne({
-                accountId: profile.id,
-                provider: 'facebook',
-            });
-            if (!user) {
-                console.log('Adding new facebook user to DB..');
-                const user = new User({
-                    accountId: profile.id,
-                    name: profile.displayName,
-                    provider: profile.provider,
-                });
-                await user.save();
-                // console.log(user);
-                return cb(null, profile);
-            } else {
-                console.log('Facebook User already exist in DB..');
-                // console.log(profile);
-                return cb(null, profile);
+            try {
+                const usuarioModel = new Usuario();
+                const usuario = await usuarioModel.buscarPorEmail(profile.emails[0].value);
+
+                if (!usuario) {
+                    console.log('Adding new facebook user to DB..');
+                    const nuevoUsuario = {
+                        email: profile.emails[0].value,
+                        nombre: profile.name.givenName,
+                        apellidos: profile.name.familyName,
+                        genero: 'o',
+                        foto: 'none',
+                        clave: 'facebook'
+                    };
+                    const idUsuario = await usuarioModel.crear(nuevoUsuario);
+                    return cb(null, { id: idUsuario, ...nuevoUsuario });
+                } else {
+                    console.log('Facebook User already exist in DB..');
+                    return cb(null, usuario);
+                }
+            } catch (err) {
+                return cb(err);
             }
         }
     )
