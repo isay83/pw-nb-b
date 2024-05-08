@@ -91,32 +91,6 @@ function generarOperador()
     <!-- Contenedor invisible para cargar el modal de login -->
     <div id="modalContainerLogin"></div>
 
-
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId: '{your-app-id}',
-                cookie: true,
-                xfbml: true,
-                version: '{api-version}'
-            });
-
-            FB.AppEvents.logPageView();
-
-        };
-
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {
-                return;
-            }
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-
     <!-- Contenedor invisible para cargar el modal de Registro -->
     <div id="modalContainerRegistro"></div>
 
@@ -142,7 +116,7 @@ function generarOperador()
             </div>
         </div>
     </div>
-
+    <!-- CARDS -->
     <div class="container mt-3">
         <div class="row">
             <div class="col">
@@ -192,42 +166,8 @@ function generarOperador()
     </div>
 
     <!-- MODAL -->
-    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Muestra un segundo modal y oculta este con el botón de abajo.
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Abre el
-                        segundo modal</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Oculta este modal y muestra el primero con el botón de abajo.
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Regresa
-                        al primer modal</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Abre el primer
-        modal</button>
+    <div id="modalContainerExampleToggle"></div>
+    <button class="btn btn-primary" type="button" onclick="loadModal('exampleModalToggle', 'modalContainerExampleToggle', 'html/exampleModalToggle.html')">Abre el modal de ejemplo</button>
 
     <?php echo $_SESSION['operacion']; ?>
 

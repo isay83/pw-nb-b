@@ -8,7 +8,6 @@ function loadModal(modalId, containerId, modalPath) {
 }
 
 function closeModal(modalId) {
-    // Cerrar el modal de login
     $(`#${modalId}`).modal('hide');
 }
 

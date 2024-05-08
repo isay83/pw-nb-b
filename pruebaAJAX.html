@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function registra() {
+            // con AJAX lanzaremos el registro de mi mensaje.
+        }
+
+        function revisa() {
+            // con AJAX vamos a consumir los mensajes y maquetar el div
+        }
+        $.ajax({
+            url: "189.34.63.86/prueba.php",
+            type: "post",
+            data: $("#formulario").serialize(),
+            success: function (response) {
+                $("#mensajes").html(response);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <textarea id="miMensaje"></textarea>
+    <input type="button" value="">
+
+    <div id="mensajes"></div>
+
+    <script>
+        setInterval(revisa(), 3000 {
+            // con AJAX vamos a consumir los mensajes y maquetar el div
+        });
+
+    </script>
+</body>
+
+</html>
