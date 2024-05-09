@@ -1,41 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 
     <script>
         function registra() {
             // con AJAX lanzaremos el registro de mi mensaje.
+            $.ajax({
+                url: "http://172.20.105.1/pw2024_1/pruebaAJAX.php",
+                type: "POST",
+                data: {
+                    accion: "registra",
+                    comentario: comentario.value
+                },
+                error: function (r) {
+                    console.log(JSON.stringify(r));
+                },
+                beforeSend: function () {
+                    mensajes.innerHTML = "Cargando...";
+                },
+                success: function (response) {
+                    alert("Registro exitoso!");
+                }
+
+            });
         }
 
         function revisa() {
             // con AJAX vamos a consumir los mensajes y maquetar el div
+            $.ajax({ // forma como jquery implementa el ajax
+                url: "http://172.20.105.1/pw2024_1/pruebaAJAX.php",
+                type: "POST",
+                data: { accion: "revisa" },
+                beforeSend: function () {
+                    mensajes.innerHTML = "Cargando...";
+                },
+
+                error: function (r) {
+                    console.log(JSON.stringify(r));
+                },
+
+                // endpoint es el recurso que resuelve peticiones, sin necesidad de una interfaz (web service)
+                // ENDPOINT: "/prueba.php",
+                success: function (response) {
+                    m = JSON.parse(response);
+                    console.log(m);
+                    html += '<table class="table-auto mx-auto">';
+                    html += '<thead><tr><th class="px-4 py-2 bg-blue-500 text-white">Registro</th><th class="px-4 py-2 bg-blue-500 text-white">Comentario</th><th class="px-4 py-2 bg-blue-500 text-white">IP</th></tr></thead>';
+                    html += '<tbody>';
+                    m.forEach(function (mensaje) {
+                        html += '<tr class="hover:bg-blue-200">';
+                        html += '<td class="border px-4 py-2">' + mensaje.Registro + '</td>';
+                        html += '<td class="border px-4 py-2">' + mensaje.Comentario + '</td>';
+                        html += '<td class="border px-4 py-2">' + mensaje.Ip + '</td>';
+                        html += '</tr>';
+                    });
+                    html += '</tbody></table>';
+                    $("#mensajes").html(html);
+                }
+            });
         }
-        $.ajax({
-            url: "189.34.63.86/prueba.php",
-            type: "post",
-            data: $("#formulario").serialize(),
-            success: function (response) {
-                $("#mensajes").html(response);
-            }
-        });
+
     </script>
 </head>
 
 <body>
-    <textarea id="miMensaje"></textarea>
-    <input type="button" value="">
+    <textarea id="comentario"></textarea>
+    <input type="button" onclick="registra();" value="Registrar">
 
     <div id="mensajes"></div>
 
     <script>
-        setInterval(revisa(), 3000 {
-            // con AJAX vamos a consumir los mensajes y maquetar el div
-        });
-
+        hilo = setInterval(revisa, 3000);
     </script>
 </body>
 
