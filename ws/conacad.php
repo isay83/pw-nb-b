@@ -13,7 +13,16 @@ echo $result;
 */
 $client = new soapClient(null, array(
     'location' => 'http://localhost/pw-nb-b/ws/webservice.php',
-    'uri' => 'http://localhost/pw-nb-b/ws/',
+    'uri' => 'urn:webservices',
 ));
 
-var_dump($client->__getFunctions());
+//var_dump($client->__getFunctions());
+var_dump($client->sumar(8, 3));
+echo "<br><br><br>";
+// imprimir la tabla
+$tableData = $client->tabla(8);
+$tableArray = json_decode($tableData, true);
+
+foreach ($tableArray as $row) {
+    echo $row[0] . " × " . $row[1] . " = " . $row[2] . "<br>";
+}

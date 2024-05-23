@@ -22,6 +22,7 @@ class comportamiento
         }
         return json_encode($datos);
     }
+
     function horoscopo($s)
     {
         $mensajes = array(
@@ -43,6 +44,6 @@ class comportamiento
 }
 
 
-$server = new soapServer(null, array('uri' => 'http://localhost/pw-nb-b/ws/webservice.php'));
+$server = new soapServer(null, array('uri' => 'urn:webservices'));
 $server->setClass('comportamiento');
 $server->handle();
