@@ -26,3 +26,11 @@ $tableArray = json_decode($tableData, true);
 foreach ($tableArray as $row) {
     echo $row[0] . " × " . $row[1] . " = " . $row[2] . "<br>";
 }
+
+
+// wsREST.php
+$dateData = file_get_contents("https://tigger.celaya.tecnm.mx/ws/wsREST.php?fechaAcceso=2024-05-22");
+
+echo $dateData . "<br>";
+
+// CURL request
