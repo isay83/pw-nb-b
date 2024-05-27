@@ -3,6 +3,10 @@
     background: repeating-conic-gradient(blue 10%, yellow 20%, red 30%);
 }
 
+#nb-p-blue {
+    background: linear-gradient(to right, #007bff, #00a5ff);
+}
+
 /* Estilo para el primer botón */
 .btn-custom-1 {
     background-color: #ff5733;

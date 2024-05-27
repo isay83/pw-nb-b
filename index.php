@@ -3,19 +3,21 @@ session_start();
 session_unset();
 
 // 3 digitos y 2 operadores
-$operacion = generarOperando() . generarOperador() . generarOperando() . generarOperador() . generarOperando();
+$opeLogin = generarOperando() . generarOperador() . generarOperando() . generarOperador() . generarOperando();
+$opeRegistro = generarOperando() . generarOperador() . generarOperando() . generarOperador() . generarOperando();
+$opeRecuperar = generarOperando() . generarOperador() . generarOperando() . generarOperador() . generarOperando();
 // Calcular el valor de la operación
-$resultado = eval("return $operacion;");
+$resuLogin = eval("return $opeLogin;");
+$resuRegistro = eval("return $opeRegistro;");
+$resuRecuperar = eval("return $opeRecuperar;");
 
-$_SESSION['operacion'] = $operacion;
-//$_SESSION['capt_login'] = $resuLogin;
-//$_SESSION['capt_registro'] = $resuRegistro;
-//$_SESSION['capt_contra'] = $resuContra;
+$_SESSION['ope_login'] = $opeLogin;
+$_SESSION['ope_registro'] = $opeRegistro;
+$_SESSION['ope_recuperar'] = $opeRecuperar;
 
-
-// FACEBOOK
-// 
-// 
+$_SESSION['capt_login'] = $resuLogin;
+$_SESSION['capt_registro'] = $resuRegistro;
+$_SESSION['capt_recuperar'] = $resuRecuperar;
 
 function generarOperando()
 {
@@ -42,13 +44,13 @@ function generarOperador()
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>s
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
 
     <title>Menú con Bootstrap</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg" id="nb-p-blue" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><i>bernalarriaga.com</i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,13 +71,13 @@ function generarOperador()
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
                             <li>
-                                <a class="dropdown-item" href="#" onclick="loadModal('loginModal', 'modalContainerLogin', 'html/loginModal.html')">Login</a>
+                                <a class="dropdown-item" href="#" onclick="loadModal('loginModal', 'modalContainerLogin', 'html/loginModal.php')">Login</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#" onclick="loadModal('registroModal', 'modalContainerRegistro', 'html/registroModal.html')">Registro</a>
+                                <a class="dropdown-item" href="#" onclick="loadModal('registroModal', 'modalContainerRegistro', 'html/registroModal.php')">Registro</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#" onclick="loadModal('recuperarModal', 'modalContainerRecuperar', 'html/recuperarModal.html')">Recuperar contraseña</a>
+                                <a class="dropdown-item" href="#" onclick="loadModal('recuperarModal', 'modalContainerRecuperar', 'html/recuperarModal.php')">Recuperar contraseña</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -170,7 +172,8 @@ function generarOperador()
     <div id="modalContainerExampleToggle"></div>
     <button class="btn btn-primary" type="button" onclick="loadModal('exampleModalToggle', 'modalContainerExampleToggle', 'html/exampleModalToggle.html')">Abre el modal de ejemplo</button>
 
-    <?php echo $_SESSION['operacion']; ?>
+    <? //php echo $_SESSION['operacion']; 
+    ?>
 
 
     <script src="js/modalLoader.js"></script>
